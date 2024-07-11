@@ -1,0 +1,60 @@
+body{
+    background-color: black;
+    color:white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display:flex;
+    justify-content:center;
+}
+
+
+h1{
+    text-align:center;
+}
+
+#CalcContainer{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    /*outline-color: white;
+    outline-width: 10px;
+    outline-style: solid;*/
+    width:300px;
+}
+
+#Display{
+    display:flex;
+    justify-content:right;
+    font-size: 50px;
+    margin-right:15px;
+}
+
+#Row1, #Row2, #Row3, #Row4, #Row5{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom: 5px;
+}
+
+button{
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+}
+
+#zero{
+    width:130px;
+    border-radius:40%;
+}
+
+.digit{
+    background-color: rgb(73, 73, 73);
+}
+
+.extra{
+    background-color:darkgrey;
+}
+
+.arithmetic{
+    background-color:orange;
+}
