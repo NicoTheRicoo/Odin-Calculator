@@ -15,7 +15,14 @@ const buttons = document.querySelectorAll("button");
                 var1 = var1 + Buttons.innerHTML;                //no sign btn pressed
                 updateDisplay(var1);}                           
         }else if(Buttons.className === "arithmetic"){           //assigns arithmetic sign
+            if(!sign){
             sign = Buttons.innerHTML;
+            }else if(sign){
+            let tempsign = Buttons.innerHTML;
+            Equals(var1,var2,sign);
+            sign = tempsign;
+            tempsign = "";
+            }
         }else if (Buttons.id === "equals"){                     //if equals is pressed, calls func
             if(sign && var1 && var2){                           //must have two var and a sign selected
             Equals(var1, var2, sign);}
@@ -60,7 +67,6 @@ function Equals(v1, v2, s){
     v1 = Number(v1);
     v2 = Number(v2);
     let result = 0;
-    console.log(s);
     switch(s){
         case "+": result = v1 + v2; break;
         case "-": result = v1 - v2; break;
@@ -68,8 +74,8 @@ function Equals(v1, v2, s){
         case "÷": result = v1 / v2; break;
     }
     sign = "";
-    updateDisplay(result);
     var1 = result.toString();
+    updateDisplay(var1);
     var2 = "";
     return;
 }
@@ -77,11 +83,7 @@ function Equals(v1, v2, s){
 function updateDisplay(userInput){
     let temp = userInput;
         if (display.innerHTML === "0"){
-            display.innerHTML = temp;
+            display.innerHTML = temp.substring(0,10);
         } else if(display.innerHTML != "0"){
-            display.innerHTML = temp;
-        }else if(display.innerHTML === "="){
-            //call function that does arithmetic
-        }
-        
+            display.innerHTML = temp.substring(0,10);}
 }
